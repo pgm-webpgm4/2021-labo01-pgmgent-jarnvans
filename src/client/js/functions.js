@@ -29,6 +29,20 @@ const api = {
     const res = await fetch(`http://localhost:5050/author/`);
     const authors = await res.json();
     return authors;
+  },
+  async createPost(post) {
+    const jsonPost = JSON.stringify(post);
+    console.log(jsonPost);
+    const res = await fetch(`http://localhost:5050/blog/create`, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: post,
+    });
+    const author = await res.json();
   }
 }
 

@@ -7,6 +7,7 @@ const app = express();
 const port = 8080;
 
 app.use('/js', express.static(__dirname + '/js'));
+app.use('/css', express.static(__dirname + '/css'));
 
 const startClient = () => {
   return new Promise((resolve, reject) => {

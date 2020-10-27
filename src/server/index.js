@@ -9,6 +9,7 @@ const port = 5050;
 // const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
