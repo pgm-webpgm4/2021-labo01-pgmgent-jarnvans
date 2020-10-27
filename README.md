@@ -4,4 +4,4 @@ This is an easy way to start a full stack application with a client and a server
 
 ## Author
 
-This application was created by [YOUR NAME].
+This application was created by Jarne Van Steendam.
