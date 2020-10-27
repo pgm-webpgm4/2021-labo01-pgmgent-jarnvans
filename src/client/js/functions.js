@@ -40,7 +40,7 @@ const api = {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: post,
+      body: jsonPost,
     });
     const author = await res.json();
   }

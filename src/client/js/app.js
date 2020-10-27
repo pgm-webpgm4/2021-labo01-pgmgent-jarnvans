@@ -2,7 +2,7 @@ import api from './functions.js';
 
 const cardsEl = document.querySelector('.cards');
 const detailEl = document.querySelector('.detail');
-const selectEl = document.querySelector('#authors');
+const selectEl = document.querySelector('#author');
 
 if (cardsEl !== null) {
   // const posts = api.getAllPosts();
@@ -67,22 +67,22 @@ const formatDate = (createdDate) => {
 
 const addZeros = (value) => value < 10 ? `0${value}` : value;
 
-document.querySelector('.btn-send').addEventListener('click', (e) => {
-  e.preventDefault();
+// document.querySelector('.btn-send').addEventListener('click', (e) => {
+//   e.preventDefault();
 
-  const title = document.querySelector('#title').value;
-  const intro = document.querySelector('#intro').value;
-  const description = document.querySelector('#description').value;
-  const author = selectEl.value;
+//   const title = document.querySelector('#title').value;
+//   const intro = document.querySelector('#intro').value;
+//   const description = document.querySelector('#description').value;
+//   const author = selectEl.value;
 
-  const post = {
-    title, intro, description, author
-  };
+//   const post = {
+//     title, intro, description, author
+//   };
 
-  console.log(post);
+//   console.log(post);
 
-  api.createPost(post)
-    .then(() => {
+//   api.createPost(post)
+//     .then(() => {
       
-    })
-});
+//     })
+// });

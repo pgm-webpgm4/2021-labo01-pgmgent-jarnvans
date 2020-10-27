@@ -6,13 +6,25 @@ const express = require('express');
 const app = express();
 const port = 5050;
 const cors = require('cors');
+const bodyParser = require('body-parser');
+
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200
+}
 
 // const fileUpload = require('express-fileupload');
-const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
-app.use(cors());
+app.use(cors(corsOptions));
+
+app.use((req, res, next) => {
+  res.header('Acces-Control-Allow-Origin', '*');
+  res.header('Acces-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.header('Acces-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+  next();
+});
 
 const { AuthorsList, PostsList } = require('../classes');
 const { author, post } = require('../actions');

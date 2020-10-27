@@ -5,6 +5,7 @@ const addPost = async (posts, req, res) => {
     const newPost = await posts.add(title, intro, description, author);
     res.status(201);
     res.json({post: newPost});
+    res.redirect('/blog');
   } catch({message}) {
     res.status(500);
     res.json({error: message});
