@@ -5,16 +5,14 @@
 const express = require('express');
 const app = express();
 const port = 5050;
+const cors = require('cors');
 
 // const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
+app.use(cors());
 
 const { AuthorsList, PostsList } = require('../classes');
 const { author, post } = require('../actions');
